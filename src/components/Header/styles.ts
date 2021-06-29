@@ -33,10 +33,16 @@ export const Container = styled.div`
             display: flex;
             padding: 16px 16px;
             background: var(--background-icon);
-            border-radius: 0 0.5rem 0.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
             margin: 0 auto;
           }
 
+          transition: filter 0.3s ;
+
+          &:hover {
+            filter: brightness(0.9)
+          }
+          
         }
       }
     }
