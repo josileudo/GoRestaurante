@@ -1,7 +1,16 @@
+import { useState } from 'react'
 import { Container } from "./styles"
-import {FiEdit3, FiTrash} from 'react-icons/fi'
+import { FiEdit3, FiTrash } from 'react-icons/fi'
 
-export const Food: React.FC = () => {
+
+export function Food() {
+
+  const [availability, setAvailability] = useState(true)
+
+  function checkAvailability() {
+    setAvailability(true)
+  }
+   
   return (
     <Container>
       <header className="">
@@ -9,7 +18,7 @@ export const Food: React.FC = () => {
       </header>
       <section className = "body">
         <h2>Ao molho</h2>
-        <p>Macarrão ao molho branco</p>
+        <p>Macarrão ao molho branco com vinagre da Rayssa</p>
         <p className= "price">R$ <b>19.90</b></p>
       </section>
 
@@ -30,11 +39,11 @@ export const Food: React.FC = () => {
         </div>
 
         <div className="availability-container">
-          <p> Disponível</p>
-          
+          <p> {availability ? 'Disponivel' : 'Indisponível'}</p>
           <label  className="switch">
             <input 
               type="checkbox"
+              checked= {availability}
             />
             <span className="slider"/>
           </label>

@@ -8,7 +8,6 @@ export const Dashboard: React.FC = () => {
   return (
     <>
       <Header/>
-
       <FoodsContainer data-testid = 'foods-list' >
         <Food/>
         <Food/>
