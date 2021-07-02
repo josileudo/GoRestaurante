@@ -6,10 +6,6 @@ import { FiEdit3, FiTrash } from 'react-icons/fi'
 export function Food() {
 
   const [availability, setAvailability] = useState(true)
-
-  function checkAvailability() {
-    setAvailability(true)
-  }
    
   return (
     <Container>
@@ -44,6 +40,7 @@ export function Food() {
             <input 
               type="checkbox"
               checked= {availability}
+              onChange={() => setAvailability(!availability)}
             />
             <span className="slider"/>
           </label>
