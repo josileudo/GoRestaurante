@@ -1,9 +1,14 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const Container = styled.div`
+interface Props {
+  availability?: boolean;
+}
+
+export const Container = styled.div<Props>`
   background: var(--background-card);
   border-radius: 0.5rem;;
-  
+
+
   header {
     background: var(--background-header-card);
     border-radius: 0.5rem 0.5rem 0 0;
@@ -11,10 +16,19 @@ export const Container = styled.div`
     height: 12rem;
     overflow: hidden;
 
+    
+  ${props => 
+    !props.availability && 
+    css`
+      opacity: 0.3;
+    `}
+    
+    transition: opacity 0.3s;
+    
     img {
       pointer-events: none;
       user-select: none;
-    }
+    }   
   }
 
   section.body {

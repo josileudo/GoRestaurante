@@ -5,10 +5,10 @@ import { FiEdit3, FiTrash } from 'react-icons/fi'
 
 export function Food() {
 
-  const [availability, setAvailability] = useState(true)
+ const [availability, setAvailability] = useState(true)
    
   return (
-    <Container>
+    <Container availability={availability}>
       <header className="">
         <img src="https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png" alt="molho" />
       </header>
