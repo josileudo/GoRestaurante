@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled, { css } from 'styled-components';
 
 interface Props {
   availability?: boolean;
@@ -6,8 +6,7 @@ interface Props {
 
 export const Container = styled.div<Props>`
   background: var(--background-card);
-  border-radius: 0.5rem;;
-
+  border-radius: 0.5rem;
 
   header {
     background: var(--background-header-card);
@@ -16,19 +15,18 @@ export const Container = styled.div<Props>`
     height: 12rem;
     overflow: hidden;
 
-    
-  ${props => 
-    !props.availability && 
-    css`
-      opacity: 0.3;
-    `}
-    
+    ${(props) =>
+      !props.availability &&
+      css`
+        opacity: 0.3;
+      `}
+
     transition: opacity 0.3s;
-    
+
     img {
       pointer-events: none;
       user-select: none;
-    }   
+    }
   }
 
   section.body {
@@ -53,33 +51,33 @@ export const Container = styled.div<Props>`
       }
     }
   }
-  
+
   section.footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 1.250rem 1.850rem;
+    padding: 1.25rem 1.85rem;
     background: #e4e4eb;
     border-radius: 0 0 0.5rem 0.5rem;
 
     .icon-container {
-     display: flex;
+      display: flex;
 
-     .icon {
-       background: #fff;
-       padding:0.65rem;
-       border: none;
-       display: flex;
-       border-radius: 0.5rem;
-       margin: auto 0.2rem;
-     }
-     svg {
-       color: #3d3d4d;
-     }
-     & + button {
-       margin-left: 0.5rem;
-     }
+      .icon {
+        background: #fff;
+        padding: 0.65rem;
+        border: none;
+        display: flex;
+        border-radius: 0.5rem;
+        margin: auto 0.2rem;
+      }
+      svg {
+        color: #3d3d4d;
+      }
+      & + button {
+        margin-left: 0.5rem;
+      }
     }
 
     div.availability-container {
@@ -87,7 +85,12 @@ export const Container = styled.div<Props>`
       align-items: center;
 
       p {
-        color: #3d3d4d
+        ${(props) =>
+          !props.availability &&
+          css`
+            transition: 5s;
+          `}
+        color: #3d3d4d;
       }
       .switch {
         position: relative;
@@ -117,7 +120,7 @@ export const Container = styled.div<Props>`
           &:before {
             position: absolute;
             content: '';
-            height: 1.250rem;
+            height: 1.25rem;
             width: 2.5rem;
             left: 0.5rem;
             bottom: 0.45rem;
@@ -141,9 +144,7 @@ export const Container = styled.div<Props>`
           -ms-transform: translateX(2rem);
           transform: translateX(2rem);
         }
-
       }
     }
   }
-  
-`
+`;

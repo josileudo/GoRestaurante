@@ -25,7 +25,7 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "server": "json-server server.json -p 3333",
+    "server": "json-server server.json -p 5555",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
